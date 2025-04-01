@@ -6,11 +6,11 @@ def hello(request):
     return render(request, 'listings/hello.html', {'bands': bands})
 
 def about(request):
-    return HttpResponse('<h1>À propos</h1> <p>Nous adorons merch !</p>')
+    return render(request, 'listings/about.html', {'bands': 'band'})
 
 def listings(request):
-    return HttpResponse('<h1>Listings</h1>')
+    return render(request, 'listings/listings.html')
     
 
 def contact(request):
-    return HttpResponse('<h1>Contactez-nous</h1>')
+    return render(request, 'listings/contact.html')
