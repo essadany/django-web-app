@@ -5,5 +5,6 @@ class Band(models.Model):
     genre = models.CharField(max_length=100)
     year = models.IntegerField()
 
-    def __str__(self):
-        return self.name
+    
+class Annonce(models.Model):
+    title = models.CharField(max_length=100)
