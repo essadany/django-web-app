@@ -1,0 +1,17 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1>Ajouter un groupe</h1>
+
+    <p>Pour ajouter un groupe, veuillez remplir le formulaire ci-dessous :</p>
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Envoyer">
+    </form>
+
+{% endblock %}
