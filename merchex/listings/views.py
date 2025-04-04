@@ -46,3 +46,24 @@ def band_create(request):
     else:
         form = BandForm()
     return render(request, 'listings/band_form.html', {'form': form})
+
+def band_update(request, id):
+            band = Band.objects.get(id=id)
+            form = BandForm(instance=band)  # on pré-remplir le formulaire avec un groupe existant
+            if request.method == 'POST':
+                form = BandForm(request.POST, instance=band)  # on pré-remplir le formulaire avec un groupe existant
+                if form.is_valid():
+                    form.save()
+                    return redirect('band-detail', id=band.id)  # rediriger vers la page de détails du groupe
+            else:
+                form = BandForm(instance=band)  # on pré-remplir le formulaire avec un groupe existant
+            return render(request,
+                            'listings/band_update.html',
+                            {'form': form})
+            
+def band_delete(request, id):
+    band = Band.objects.get(id=id)
+    if request.method == 'POST':
+        band.delete()
+        return redirect('band-list')
+    return render(request, 'listings/band_delete.html', {'band': band})

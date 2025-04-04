@@ -1,0 +1,15 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1>Supprimer le groupe</h1>
+
+    <p>Êtes-vous sûr de vouloir supprimer le groupe "{{ band.name }}" ?</p>
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        <input type="submit" value="Confirmer la suppression">
+    </form>
+
+{% endblock %}

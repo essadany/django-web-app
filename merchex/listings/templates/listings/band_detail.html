@@ -1,6 +1,8 @@
 {% extends 'listings/base.html' %}
 {% block content %}
     <h1>Groupe: {{ band.name }}</h1>
+    <a href="{% url 'band-update' band.id %}" class="btn btn-primary">Modifier</a>
+    <a href="{% url 'band-delete' band.id %}" class="btn btn-danger">Supprimer</a>
     <p>Genre: {{ band.genre }}</p>
     <p>Biographie: {{ band.biography }}</p>
 

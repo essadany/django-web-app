@@ -3,6 +3,7 @@
 {% block content %}
     <h1>Bienvenue à Merchex</h1>
         <p>Il y a {{ bands|length }} groupes de musique.</p>
+        <a href="{% url 'band-create' %}" class="btn btn-primary">Créer un nouveau groupe</a>
         <ul>
             {% for band in bands %}
                 <li>

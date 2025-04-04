@@ -26,4 +26,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('bands/<int:id>/', views.band_detail, name='band-detail'),
     path('bands/create/', views.band_create, name='band-create'),
+    path('bands/update/<int:id>/', views.band_update, name='band-update'),
+    path('bands/delete/<int:id>/', views.band_delete, name='band-delete'),
 ]
